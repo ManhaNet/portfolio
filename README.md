@@ -79,7 +79,7 @@ If the repository contains this `portfolio` folder inside a larger repository, s
 
 The current production URL used in metadata is:
 
-`https://md-momtazur-rashid.pages.dev/`
+`https://portfolio.s-manha-mm.workers.dev/`
 
 If a different final domain is used, update:
 
