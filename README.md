@@ -79,7 +79,7 @@ If the repository contains this `portfolio` folder inside a larger repository, s
 
 The current production URL used in metadata is:
 
-`https://portfolio.s-manha-mm.workers.dev/`
+`https://md-momtazur-rashid.pages.dev/`
 
 If a different final domain is used, update:
 
@@ -90,4 +90,3 @@ If a different final domain is used, update:
 ## License
 
 All profile and resume content belongs to Md. Momtazur Rashid.
-Last updated: July 2026
