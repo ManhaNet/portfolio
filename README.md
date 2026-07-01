@@ -90,3 +90,4 @@ If a different final domain is used, update:
 ## License
 
 All profile and resume content belongs to Md. Momtazur Rashid.
+Last updated: July 2026
