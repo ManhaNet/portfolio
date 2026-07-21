@@ -8,7 +8,7 @@
   const year = document.querySelector("#year");
   const revealItems = document.querySelectorAll(".reveal");
   const typingTarget = document.querySelector(".typing-text");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = false;
 
   if (year) {
     year.textContent = new Date().getFullYear();
@@ -111,43 +111,76 @@
     sections.forEach((section) => activeObserver.observe(section));
   }
 
-  // GPU-accelerated Typing Animation using requestAnimationFrame
-  if (typingTarget && !reduceMotion) {
-    const words = typingTarget.dataset.words.split(",").map((word) => word.trim()).filter(Boolean);
-    let wordIndex = 0;
-    let letterIndex = 0;
-    let deleting = false;
-    let lastTime = 0;
-    let timer = 0;
+// Typing Animation
+if (typingTarget) {
 
-    const type = (timestamp) => {
-      if (!lastTime) lastTime = timestamp;
-      const delta = timestamp - lastTime;
-      lastTime = timestamp;
-      timer += delta;
+  const words = typingTarget.dataset.words
+    .split(",")
+    .map(word => word.trim())
+    .filter(Boolean);
 
-      const word = words[wordIndex];
-      const speed = deleting ? 40 : 80;
-      const waitTime = (!deleting && letterIndex === word.length) ? 1200 : 200;
+  const typingSpeed = reduceMotion ? 150 : 80;
+  const deletingSpeed = reduceMotion ? 80 : 40;
 
-      if (timer >= speed) {
-        timer = 0;
-        typingTarget.textContent = word.slice(0, letterIndex);
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
 
-        if (!deleting && letterIndex < word.length) {
-          letterIndex++;
-        } else if (!deleting && letterIndex === word.length) {
-          deleting = true;
-        } else if (deleting && letterIndex > 0) {
-          letterIndex--;
-        } else {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-        }
+  function type() {
+
+    const word = words[wordIndex];
+
+    typingTarget.textContent = word.substring(0, charIndex);
+
+    if (!deleting) {
+      charIndex++;
+
+      if (charIndex > word.length) {
+        deleting = true;
+        setTimeout(type, 1200);
+        return;
       }
-      requestAnimationFrame(type);
-    };
 
-    requestAnimationFrame(type);
+    } else {
+
+      charIndex--;
+
+      if (charIndex < 0) {
+        deleting = false;
+        charIndex = 0;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+
+    }
+
+    setTimeout(type, deleting ? deletingSpeed : typingSpeed);
   }
+
+  type();
+}
+// ===========================
+// Back To Top Button
+// ===========================
+
+const backToTop = document.querySelector(".back-to-top");
+
+if (backToTop) {
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+}
+console.log("✅ END OF SCRIPT");
 })();

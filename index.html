@@ -10,6 +10,9 @@ content="Experienced IT Support Engineer with 15+ years of expertise in Desktop 
   <meta name="author" content="Md. Momtazur Rashid">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#06111f">
+  <meta name="color-scheme" content="dark light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google-site-verification" content="gDpEWbF5jIFiAYYFTC6uHlX9bexP4YlXUKVcb75tYiU" />
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Md. Momtazur Rashid Portfolio">
@@ -25,20 +28,43 @@ content="Experienced IT Support Engineer with 15+ years of expertise in Desktop 
   <meta name="twitter:image:alt" content="Professional profile photo of Md. Momtazur Rashid">
   <title>Md. Momtazur Rashid | IT Support Engineer | Desktop Support Engineer | Field Service Engineer</title>
   <link rel="canonical" href="https://portfolio.s-manha-mm.workers.dev/">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link rel="preload" href="assets/images/md-momtazur-rashid-headshot.webp" as="image" type="image/webp">
-  <link rel="preload" href="style.css" as="style">
-  <link rel="stylesheet" href="style.css">
+  <!-- svg -->
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+
+<!-- png fallback -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- apple -->
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link
+rel="preload"
+href="/assets/images/md-momtazur-rashid-headshot.webp"
+as="image"
+type="image/webp"
+fetchpriority="high">
+  <link rel="preload" href="/style.css" as="style">
+  <link rel="stylesheet" href="/style.css">
  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://portfolio.s-manha-mm.workers.dev/#person",
+
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://portfolio.s-manha-mm.workers.dev/"
+  },
   "name": "Md. Momtazur Rashid",
   "jobTitle": "IT Support Engineer",
   "description": "Experienced IT Support Engineer with 15+ years of expertise in Desktop Support, Technical Support, Windows Administration, Linux, Network Infrastructure, VoIP, Hardware Troubleshooting and Field Service.",
-  "email": "mailto:s.manha.mm@gmail.com",
+  "email": "s.manha.mm@gmail.com",
   "telephone": "+8801925868000",
-  "image": "https://portfolio.s-manha-mm.workers.dev/assets/images/md-momtazur-rashid-profile.jpg",
+  "image": {
+  "@type": "ImageObject",
+  "url": "https://portfolio.s-manha-mm.workers.dev/assets/images/md-momtazur-rashid-profile.jpg"
+},
   "url": "https://portfolio.s-manha-mm.workers.dev/",
   "sameAs": [
   "https://www.linkedin.com/in/momtazur-rashid-it-support",
@@ -57,6 +83,7 @@ content="Experienced IT Support Engineer with 15+ years of expertise in Desktop 
 "contactPoint": {
   "@type": "ContactPoint",
   "contactType": "Professional",
+  "url": "https://portfolio.s-manha-mm.workers.dev/",
   "email": "s.manha.mm@gmail.com",
   "telephone": "+8801925868000",
   "availableLanguage": [
@@ -985,9 +1012,15 @@ Government-issued driving license supporting field service, equipment installati
   <footer class="footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year">2026</span> Md. Momtazur Rashid. All rights reserved.</p>
-      <a href="#top">Back to top</a>
     </div>
   </footer>
+
+<button
+  class="back-to-top"
+  aria-label="Back to top"
+  title="Back to top">
+  ↑
+</button>
 
   <script src="script.js" defer></script>
 </body>

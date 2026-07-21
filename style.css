@@ -1120,6 +1120,9 @@ body.is-loaded .page-loader {
     width: 100%;
     padding: 13px 12px;
   }
+
+
+
   .timeline::before,
   .timeline-item::before {
     display: none;
@@ -1227,4 +1230,38 @@ body.is-loaded .page-loader {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* ===========================
+   Back To Top Button
+=========================== */
+
+.back-to-top{
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all .3s ease;
+    z-index: 999;
+}
+
+.back-to-top.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover{
+    transform: translateY(-3px);
 }
