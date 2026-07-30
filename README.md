@@ -117,8 +117,5 @@ If a different final domain is used, update:
 
 ## License
 
-© 2026 Md. Momtazur Rashid.
-
-All portfolio content, resume, graphics, and branding are the intellectual property of Md. Momtazur Rashid.
-
-All rights reserved.
+All profile and resume content belongs to Md. Momtazur Rashid.
+Portfolio updated 2026
