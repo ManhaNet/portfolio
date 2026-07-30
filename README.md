@@ -1,10 +1,14 @@
-# Md. Momtazur Rashid Portfolio
+# Md. Momtazur Rashid — Professional Portfolio
 
-Production-ready static portfolio website for Md. Momtazur Rashid, built with HTML5, CSS3, and vanilla JavaScript.
+![Portfolio Preview](assets/images/hero-preview.png)
+
+Production-ready personal portfolio website showcasing 15+ years of experience in Technical Operations, IT Infrastructure, Industrial Electrical Engineering, Field Service Engineering, Networking, Linux Administration, VoIP Systems, and Manufacturing Operations.
 
 ## Source of Truth
 
-The website content preserves the factual information from the resume/source profile. The downloadable resume is the official PDF file:
+The website content is based on the official professional resume and serves as the primary public portfolio.
+
+The downloadable resume is the official reference document:
 
 `assets/resume/Md_Momtazur_Rashid_Resume.pdf`
 
@@ -24,6 +28,10 @@ The website content preserves the factual information from the resume/source pro
 - Open Graph, Twitter Card, canonical URL, robots.txt, sitemap.xml, and JSON-LD schema
 - Optimized WebP/JPEG profile images
 - Cloudflare Pages and GitHub Pages compatible
+- Lighthouse 100/100/100/100
+- Fully responsive
+- Performance optimized
+- ATS-friendly recruiter-focused content
 
 ## Project Structure
 
@@ -46,7 +54,11 @@ portfolio/
 Open `index.html` directly in a browser, or serve the folder with a static server:
 
 ```bash
+# Option 1
 python -m http.server 8080
+
+# Option 2
+npx serve
 ```
 
 Then visit:
@@ -75,6 +87,10 @@ If the repository contains this `portfolio` folder inside a larger repository, s
 4. Select the branch and root folder.
 5. Save and wait for GitHub Pages to publish.
 
+## Live Portfolio
+
+🌐 https://portfolio.s-manha-mm.workers.dev/
+
 ## SEO Domain
 
 The current production URL used in metadata is:
@@ -87,7 +103,22 @@ If a different final domain is used, update:
 - `robots.txt`
 - `sitemap.xml`
 
+## Technologies
+
+- HTML5
+- CSS3
+- Vanilla JavaScript (ES6)
+- Responsive Design
+- SEO Optimization
+- JSON-LD Schema
+- Open Graph Metadata
+- Cloudflare Pages
+- GitHub
+
 ## License
 
-All profile and resume content belongs to Md. Momtazur Rashid.
-Portfolio updated 2026
+© 2026 Md. Momtazur Rashid.
+
+All portfolio content, resume, graphics, and branding are the intellectual property of Md. Momtazur Rashid.
+
+All rights reserved.

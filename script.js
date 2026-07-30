@@ -8,7 +8,9 @@
   const year = document.querySelector("#year");
   const revealItems = document.querySelectorAll(".reveal");
   const typingTarget = document.querySelector(".typing-text");
-  const reduceMotion = false;
+  const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
 
   if (year) {
     year.textContent = new Date().getFullYear();
@@ -111,7 +113,9 @@
     sections.forEach((section) => activeObserver.observe(section));
   }
 
+// ===========================
 // Typing Animation
+// ===========================
 if (typingTarget) {
 
   const words = typingTarget.dataset.words
@@ -121,6 +125,7 @@ if (typingTarget) {
 
   const typingSpeed = reduceMotion ? 150 : 80;
   const deletingSpeed = reduceMotion ? 80 : 40;
+  const pauseTime = 1200;
 
   let wordIndex = 0;
   let charIndex = 0;
@@ -130,34 +135,35 @@ if (typingTarget) {
 
     const word = words[wordIndex];
 
-    typingTarget.textContent = word.substring(0, charIndex);
+    typingTarget.textContent = word.slice(0, charIndex);
 
     if (!deleting) {
-      charIndex++;
 
-      if (charIndex > word.length) {
+      if (charIndex < word.length) {
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
         deleting = true;
-        setTimeout(type, 1200);
-        return;
+        setTimeout(type, pauseTime);
       }
 
     } else {
 
-      charIndex--;
-
-      if (charIndex < 0) {
+      if (charIndex > 0) {
+        charIndex--;
+        setTimeout(type, deletingSpeed);
+      } else {
         deleting = false;
-        charIndex = 0;
         wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, typingSpeed);
       }
 
     }
-
-    setTimeout(type, deleting ? deletingSpeed : typingSpeed);
   }
 
   type();
 }
+
 // ===========================
 // Back To Top Button
 // ===========================
@@ -166,21 +172,25 @@ const backToTop = document.querySelector(".back-to-top");
 
 if (backToTop) {
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    },
+    { passive: true }
+  );
 
   backToTop.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: reduceMotion ? "auto" : "smooth"
     });
   });
 
 }
-console.log("✅ END OF SCRIPT");
+//console.log("✅ END OF SCRIPT");
 })();

@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true">
-  <circle cx="24" cy="10" r="5" fill="none" stroke="#58e1ff" stroke-width="3"/>
-  <circle cx="10" cy="36" r="5" fill="none" stroke="#38a7ff" stroke-width="3"/>
-  <circle cx="38" cy="36" r="5" fill="none" stroke="#38a7ff" stroke-width="3"/>
-  <path d="M22 15 12 31M26 15l10 16M15 36h18" fill="none" stroke="#4de6a8" stroke-width="3" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1fdcf4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network-icon lucide-network"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
